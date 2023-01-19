@@ -11,9 +11,30 @@ var getComputerChoice = Math.random()
 const computerSelection = getComputerChoice
 var playerSelection
 
-function playRound(playerSelection, getComputerChoice){
+function playRound(playerSelection, computerSelection){
+    if (playerSelection === computerSelection){
+        result = "It/'s a tie!";}
 
+    else if (playerSelection === "Rock") {
+        if (computerSelection === "Paper"){
+            result = "You Lose"; }
+        else (computerSelection === "Scissors"){
+            result = "You Win!!";}
+        }
+    else if (playerSelection === "Paper") {
+        if (computerSelection === "Scissors"){
+            result = "You Lose"; }
+        else (computerSelection === "Rock"){
+            result = "You Win!!";}
+        }
+    else if (playerSelection === "Scissors") {
+        if (computerSelection === "Rock"){
+            result = "You Lose"; }
+        else (computerSelection === "Paper"){
+            result = "You Win!!";}
+        }
+    
 
 }
 
-console.log(computerSelection)
+console.log(playRound("Rock"))
