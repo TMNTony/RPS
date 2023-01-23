@@ -1,22 +1,20 @@
-let playerScore = 0
-let computerScore = 0
-
-
+var playerScore = 0
+var computerScore = 0
+const computerSelection = getComputerChoice()
 const playerSelection = "Rock"
-var getComputerChoice = Math.random()
-    if (getComputerChoice <= 0.33){
-        getComputerChoice = "Rock"
+function getComputerChoice(){
+    const choice = Math.random()
+    if (choice <= 0.33){
+        return "Rock"
     }
-    else if (getComputerChoice <= 0.66){
-        getComputerChoice = "Paper"
+    else if (choice <= 0.66){
+        return "Paper"
     }
-    if (getComputerChoice <= 1.0){
-        getComputerChoice = "Scissors"
+    if (choice <= 1.0){
+        return "Scissors"
     }
+}
 
-const computerSelection = getComputerChoice
-
-for (let i = 0; i < 5; i++) {
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection){
             return "It's a tie";}
@@ -47,10 +45,10 @@ function playRound(playerSelection, computerSelection) {
             playerScore++
             return "You Win!!";}
         }
-    } 
-} 
-
-
-    console.log(playRound(playerSelection, computerSelection))
-    console.log(playerScore)
-    console.log(computerScore)
+    }  
+    
+function game () {
+    for (let i = 0; i < 5; i++)
+    playRound(playerSelection, computerSelection)
+}
+    console.log(game())
